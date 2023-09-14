@@ -1,0 +1,137 @@
+nav {
+    background: #415A80;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    z-index: 99;
+}
+.fa {
+    cursor: pointer;
+}
+.menu-icon .fa-times {
+    transform: rotate(360deg);
+    transition: all 0.2s ease-in-out;
+}
+.menu-icon .fa-bars {
+    transform: rotate(180deg);
+    transition: all 0.2s ease-in-out;
+}
+.menu-icon {
+    display: none;
+}
+
+.logo {
+    justify-content: center;
+    align-items: center;
+}
+
+.logotazkia {
+    width: 60px;
+    height: 50px;
+}
+.logohamastazkia {
+    width: 60px;
+    height: 45px;
+    margin-left: 5px;
+    padding-bottom: 5px;
+}
+
+
+.button-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.button-menu li a:hover {
+    background-color: #e5e5e5;
+    border-radius: 2px;
+    transition: all 0.1s ease-in-out;
+}
+
+.button-menu li a.active  {
+    border-style: solid none solid none;
+    border-color: #938052;
+    border-radius: 0.9px;
+
+    transition: all 0.1s ease-in-out;
+}
+
+@media screen and (max-width: 850px) {
+    .logotazkia {
+        width: 50px;
+        height: 35px
+    }
+    .logohamastazkia{
+        width: 50px;
+        height: 33px;
+        margin-left: 4px;
+        padding-bottom: 3px;        
+    }
+    .button-menu li a {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    nav {
+        background: #415A80;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        position: relative;
+        z-index: 99;
+    }
+    
+    .menu-icon {
+        display: block;
+    }  
+    .button-menu {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 7);
+        padding: 20px;
+        right: 0;
+        top: 64px;
+        transition: all 0.2s ease-in-out;
+    }
+    .button-menu li {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .button-menu li:last-child {
+        margin-bottom: 0px;
+    }
+    .button-menu li a,
+    .button-menu li:last-child a {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .button-menu li a.active  {
+        border-style: none;
+    }
+    .button-menu.close {
+        right: -100%;
+        transition: all 0.2s ease-in-out;
+    }
+}

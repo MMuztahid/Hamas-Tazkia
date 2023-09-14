@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import Landing from "./pages/home";
 import './App.css';
+import AboutUs from "./pages/aboutus";
+import AccInfo from "./pages/accinfo";
+import Market from "./pages/market";
+import TopBar from "./components/topbar/TopBar";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <TopBar/>
+        <Routes>
+          <Route exact path="/" element={<Landing />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/accounting-informations" element={<AccInfo/>} />
+          <Route path="/marketplace" element={<Market/>} />
+       </Routes>
+      </Router>
   );
 }
-
-export default App;
